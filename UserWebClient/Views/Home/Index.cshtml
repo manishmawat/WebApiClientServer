@@ -1,0 +1,36 @@
+﻿@using UserWebClient.Models;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+     <p>@ViewData["Message"]</p>
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="table-responsive">
+    <table class="table table-striped ">
+        <tr>
+            <th>Date</th>
+            <th>Summary</th>
+            <th>Temperature in C</th>
+            <th>Temperature in F</th>
+        </tr>
+    @foreach(var item in (List<WeatherForecast>)Model)
+    {
+        <tr>
+            <td>
+                @item.Date
+            </td>
+            <td>
+                @item.Summary
+            </td>
+            <td>
+                @item.TemperatureC
+            </td>
+            <td>
+                @item.TemperatureF
+            </td>
+        </tr>
+    }
+    </table>
+</div>
